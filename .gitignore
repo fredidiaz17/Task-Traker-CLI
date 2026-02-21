@@ -1,0 +1,49 @@
+# ==============================
+# Python
+# ==============================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Variables de entorno
+.env
+.env.*
+
+# Logs
+*.log
+
+# Bases de datos locales
+*.sqlite3
+*.db
+
+# Testing / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ==============================
+# PyCharm
+# ==============================
+
+.idea/
+*.iml
+
+# ==============================
+# Sistema operativo
+# ==============================
+
+.DS_Store
+Thumbs.db
+
