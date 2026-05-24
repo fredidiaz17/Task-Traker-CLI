@@ -15,7 +15,7 @@ El estado de las tareas se persiste en un archivo `.json`.
 ## Requisitos previos
 
 <!-- [RELLENAR] Versión de Python utilizada. Ejemplo: -->
-- Python **3.x** o superior
+- Python **3.10** o superior
 - No requiere dependencias externas
 
 ---
@@ -139,20 +139,25 @@ python task-cli.py mark_done 2
 Task-Traker-CLI/
 ├── task-cli.py        # Punto de entrada del programa
 ├── tasks.json         # Generado automáticamente al agregar la primera tarea
-├── README.es.md      
+├── README.es.md       # README en español
 └── README.md
 ```
-
-<!-- [RELLENAR] Si hay archivos o carpetas adicionales (src/, módulos, etc.), agrégalos aquí. -->
 
 ---
 
 ## Limitaciones
 
-<!-- [RELLENAR] Comportamiento ante casos borde que hayas definido tú, por ejemplo:
-     - ¿Qué ocurre si se da un ID inexistente?
-     - ¿Qué ocurre si tasks.json se elimina manualmente?
-     - ¿Las descripciones admiten espacios o solo palabras sueltas? -->
+- ¿Qué ocurre si se da un ID inexistente?
+  El programa imprime un mensaje diciendo que la tarea no existe: `Task (ID: 3) does not exist"`
+- ¿Qué ocurre si tasks.json se elimina manualmente?
+  Si `tasks.json` no existe y se ejecuta un comando distinto de `add`, el programa no puede operar al no haber tareas registradas.
+- ¿Las descripciones admiten espacios o solo palabras sueltas?
+  El programa está pensado para ejecutarse desde la Línea de Comandos (CLI), por lo que escribir
+  la descripción con espacios normales generaría un error, ya que el CLI interpretaría cada palabra
+  como un argumento separado. Hay dos formas de evitarlo:
+  * Usar guion bajo (`_`) en lugar de espacios — el programa los reemplaza automáticamente.
+    * Entrada: `Hola_mundo` → almacenado como: `Hola mundo`
+  * Encerrar toda la descripción entre comillas: `"Hola mundo"`
 
 ---
 
